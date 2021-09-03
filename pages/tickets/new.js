@@ -3,6 +3,16 @@ import { useState } from 'react';
 const NewTicket = () => {
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
+
+  const onBlur = () => {
+    const value = parseFloat(price);
+    if (isNaN(value)) {
+      return;
+    }
+
+    setPrice(value.toFixed(2));
+  };
+
   return (
     <div>
       <h1>Create a Ticket</h1>
@@ -19,6 +29,7 @@ const NewTicket = () => {
           <label>Price</label>
           <input
             value={price}
+            onBlur={onBlur}
             onChange={(e) => setPrice(e.target.value)}
             className="form-control"
           />
