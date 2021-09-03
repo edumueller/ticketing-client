@@ -11,7 +11,7 @@ export default ({ currentUser }) => {
       return (
         <li key={href} className="nav-item">
           <Link href={href}>
-            <a classname="nav-link">{label}</a>
+            <a className="nav-link">{label}</a>
           </Link>
         </li>
       );
